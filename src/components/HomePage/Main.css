@@ -1,0 +1,50 @@
+.mainpage{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding-top: 25px;
+  
+}
+.text {
+  width: 622px;
+  height: 280px;
+  margin-left: 86px;
+}
+.text p{
+  font-size: 20px;
+  padding-top: 16px;
+  padding-bottom: 32px;
+}
+
+.text button{
+  padding: 10px 69px 10px 69px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #F1F5F9;
+  background-color: #6320EE;
+  border: none;
+}
+.image{
+  width: 488px;
+  height: 500px;
+  margin-left: 20px;
+  margin-right: 80px;
+}
+
+.image img{
+  width: 100%;
+}
+
+.mainpage h1{
+  font-size: 48px;
+  color: #6320EE;
+}
+
+.mainpage p{
+  font-size: 20px;
+  color: #1E293B;
+}

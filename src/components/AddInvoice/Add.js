@@ -1,24 +1,18 @@
 import React, { useState } from 'react';
-import QrReader from 'react-qr-scanner';
+import Html5QrcodePlugin from './Html5QrcodeScannerPlugin';
 
 export function Add() {
   const [scan, setScan] = useState('');
-  const previewStyle = {
-    height: 240,
-    width: 320,
-  };
-  const handleScan = 'Ok';
-  const handleError = 'Error';
-  const delay = 100;
   return (
     <div>
       <h1>Html5Qrcode React example!</h1>
-      <QrReader
-        delay={delay}
-        style={previewStyle}
-        onError={handleError}
-        onScan={handleScan}
+      <Html5QrcodePlugin
+        fps={10}
+        qrbox={250}
+        disableFlip={false}
+        qrCodeSuccessCallback={setScan}
       />
+      <p>Codigo lido = {scan}</p>
     </div>
   );
 }

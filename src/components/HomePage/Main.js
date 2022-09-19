@@ -19,7 +19,7 @@ export function Main() {
           </Link>
         </div>
         <div className="image">
-          <img src={image} alt="" srcset="" />
+          <img src={image} alt="imagem" />
         </div>
       </div>
     </article>

@@ -1,18 +1,24 @@
 import React, { useState } from 'react';
-import Html5QrcodePlugin from './Html5QrcodeScannerPlugin';
+import { QrReader } from 'react-qr-reader';
 
 export function Add() {
-  const [scan, setScan] = useState('');
+  const [data, setData] = useState('No result');
+
   return (
-    <div>
-      <h1>Html5Qrcode React example!</h1>
-      <Html5QrcodePlugin
-        fps={10}
-        qrbox={250}
-        disableFlip={false}
-        qrCodeSuccessCallback={setScan}
+    <>
+      <QrReader
+        onResult={(result, error) => {
+          if (!!result) {
+            setData(result?.text);
+          }
+
+          if (!!error) {
+            console.info(error);
+          }
+        }}
+        style={{ width: '50%' }}
       />
-      <p>Codigo lido = {scan}</p>
-    </div>
+      <p>{data}</p>
+    </>
   );
 }

@@ -6,22 +6,24 @@ import './Add.css';
 export function Add() {
   const [data, setData] = useState('');
 
+  const teste = 'testeeeee';
   function submit() {
     if (
       data.includes('https://portalsped.fazenda.mg.gov.br/portalnfce/sistema')
     ) {
-      api
-        .post('/invoice', {
-          url: data,
-        })
-        .then((res) => {
-          console.log(res.data);
-          alert('Nota Adicionada com Sucesso!');
-          Navigate('/');
-        })
-        .catch((err) => {
-          alert('Erro interno!');
-        });
+      // api
+      //   .post('/invoice', {
+      //     url: data,
+      //   })
+      //   .then((res) => {
+      //     console.log(res.data);
+      //     alert('Nota Adicionada com Sucesso!');
+      //     Navigate('/');
+      //   })
+      //   .catch((err) => {
+      //     alert('Erro interno!');
+      //   });
+      console.log('enviado');
     }
   }
 
@@ -37,12 +39,17 @@ export function Add() {
             if (!!result) {
               setData(result?.text);
             }
-            submit();
+            if (
+              data.includes(
+                'https://portalsped.fazenda.mg.gov.br/portalnfce/sistema',
+              )
+            ) {
+              submit();
+            }
           }}
         />
         <span></span>
         <p>{data}</p>
-        <button>Adicionar</button>
       </div>
     </section>
   );

@@ -1,6 +1,20 @@
 import './ListDay.css';
+import { api } from '../../services/api';
+import { useEffect, useState } from 'react';
 
 export function ListDay() {
+  const [product, setProduct] = useState([]);
+
+  async function fetchProducts() {
+    await api.get('/products/bisc').then((response) => {
+      setProduct(response.data);
+    });
+  }
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
   return (
     <section>
       <h1 id="listTitle">Menor preço do dia:</h1>

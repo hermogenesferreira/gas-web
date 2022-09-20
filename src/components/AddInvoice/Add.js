@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { QrReader } from 'react-qr-reader';
-
+import './Add.css';
 export function Add() {
-  const [data, setData] = useState('No result');
+  const [data, setData] = useState('');
 
   return (
     <section>
-      <div>
+      <div className="scanner">
         <QrReader
+          className="camera"
           constraints={{
             facingMode: 'environment',
           }}
@@ -15,13 +16,12 @@ export function Add() {
             if (!!result) {
               setData(result?.text);
             }
-
             if (!!error) {
               console.info(error);
             }
           }}
-          style={{ width: '50%' }}
         />
+        <span></span>
         <p>{data}</p>
       </div>
     </section>

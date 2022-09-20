@@ -1,0 +1,30 @@
+.invoiceList{
+  padding: 30px 50px 30px 50px;
+}
+
+.invoiceList h1{
+  color: #6320EE;
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+.invoiceTable{
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.invoiceTable td, .invoiceTable th{
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.invoiceTable tr:nth-child(even){background-color: #f2f2f2;}
+
+.invoiceTable td:hover{background-color: #ddd;}
+
+.invoiceTable th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #6320EE;
+  color: white;
+}

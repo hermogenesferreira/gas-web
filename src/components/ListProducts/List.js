@@ -13,7 +13,7 @@ export function List() {
 
   useEffect(() => {
     fetchProduct();
-  });
+  }, []);
 
   return (
     <section>

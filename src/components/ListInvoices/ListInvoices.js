@@ -13,7 +13,7 @@ export function ListInvoices() {
 
   useEffect(() => {
     fetchProduct();
-  });
+  }, []);
 
   return (
     <section>

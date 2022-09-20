@@ -36,12 +36,12 @@ export function Add() {
           onResult={(result, error) => {
             if (!!result) {
               setData(result?.text);
+              submit();
             }
           }}
         />
         <span></span>
         <p>{data}</p>
-        <button onClick={() => submit()}>Adicionar</button>
       </div>
     </section>
   );

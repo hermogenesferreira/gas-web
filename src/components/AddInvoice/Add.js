@@ -1,8 +1,29 @@
 import React, { useState } from 'react';
 import { QrReader } from 'react-qr-reader';
+import { Navigate } from 'react-router-dom';
+import { api } from '../../services/api';
 import './Add.css';
 export function Add() {
   const [data, setData] = useState('');
+
+  function submit() {
+    if (
+      data.includes('https://portalsped.fazenda.mg.gov.br/portalnfce/sistema')
+    ) {
+      api
+        .post('/invoice', {
+          url: data,
+        })
+        .then((res) => {
+          console.log(res.data);
+          alert('Nota Adicionada com Sucesso!');
+          Navigate('/');
+        })
+        .catch((err) => {
+          alert('Erro interno!');
+        });
+    }
+  }
 
   return (
     <section>
@@ -16,13 +37,11 @@ export function Add() {
             if (!!result) {
               setData(result?.text);
             }
-            if (!!error) {
-              console.info(error);
-            }
           }}
         />
         <span></span>
         <p>{data}</p>
+        <button onClick={() => submit()}>Adicionar</button>
       </div>
     </section>
   );

@@ -23,7 +23,7 @@ export function Add() {
       //   .catch((err) => {
       //     alert('Erro interno!');
       //   });
-      console.log('enviado');
+      alert('enviado');
     }
   }
 

@@ -2,7 +2,7 @@ import './ListDay.css';
 
 export function ListDay() {
   return (
-    <article>
+    <section>
       <h1 id="listTitle">Menor preço do dia:</h1>
       <div className="listDay">
         <div className="card">
@@ -42,6 +42,6 @@ export function ListDay() {
           </div>
         </div>
       </div>
-    </article>
+    </section>
   );
 }

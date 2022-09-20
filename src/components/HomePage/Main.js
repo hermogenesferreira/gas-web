@@ -4,7 +4,7 @@ import './Main.css';
 
 export function Main() {
   return (
-    <article>
+    <section>
       <div className="mainpage">
         <div className="text">
           <h1>Economize ao abastecer!</h1>
@@ -22,7 +22,7 @@ export function Main() {
           <img src={image} alt="imagem" />
         </div>
       </div>
-    </article>
+    </section>
   );
 }
 

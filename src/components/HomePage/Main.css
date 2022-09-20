@@ -6,7 +6,6 @@
   align-items: center;
   flex-direction: row;
   padding-top: 25px;
-  
 }
 .text {
   width: 622px;
@@ -48,3 +47,40 @@
   font-size: 20px;
   color: #1E293B;
 }
+
+@media screen and (max-width: 800px) {
+  .mainpage{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 20px;
+  }
+  .mainpage h1{
+    font-size: 24px;
+    color: #6320EE;
+  }
+  .text {
+    height: 210px;
+    margin-left: 12px;
+    padding-right: 20px;
+  }
+  .text button{
+    padding: 10px 30px 10px 30px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #F1F5F9;
+    background-color: #6320EE;
+  }
+  .text p{
+    font-size: 16px;
+    padding-top: 8px;
+    padding-bottom: 16px;
+  }
+  .image {
+    display: none;
+  }
+} 

@@ -6,24 +6,32 @@ import './Add.css';
 export function Add() {
   const [data, setData] = useState('');
 
-  const teste = 'testeeeee';
+  function isScanned() {
+    return (
+      <>
+        <button className="buttonAdd" onClick={() => submit()}>
+          Adicionar
+        </button>
+      </>
+    );
+  }
+
   function submit() {
     if (
       data.includes('https://portalsped.fazenda.mg.gov.br/portalnfce/sistema')
     ) {
-      // api
-      //   .post('/invoice', {
-      //     url: data,
-      //   })
-      //   .then((res) => {
-      //     console.log(res.data);
-      //     alert('Nota Adicionada com Sucesso!');
-      //     Navigate('/');
-      //   })
-      //   .catch((err) => {
-      //     alert('Erro interno!');
-      //   });
-      alert('enviado');
+      api
+        .post('/invoice', {
+          url: data,
+        })
+        .then((res) => {
+          console.log(res.data);
+          alert('Nota Adicionada com Sucesso!');
+          Navigate('/');
+        })
+        .catch((err) => {
+          alert('Erro interno!');
+        });
     }
   }
 
@@ -38,18 +46,13 @@ export function Add() {
           onResult={(result, error) => {
             if (!!result) {
               setData(result?.text);
-            }
-            if (
-              data.includes(
-                'https://portalsped.fazenda.mg.gov.br/portalnfce/sistema',
-              )
-            ) {
-              submit();
+              isScanned();
             }
           }}
         />
         <span></span>
         <p>{data}</p>
+        <isScanned />
       </div>
     </section>
   );

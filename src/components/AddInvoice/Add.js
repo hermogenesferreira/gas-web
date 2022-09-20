@@ -6,16 +6,6 @@ import './Add.css';
 export function Add() {
   const [data, setData] = useState('');
 
-  function isScanned() {
-    return (
-      <>
-        <button className="buttonAdd" onClick={() => submit()}>
-          Adicionar
-        </button>
-      </>
-    );
-  }
-
   function submit() {
     if (
       data.includes('https://portalsped.fazenda.mg.gov.br/portalnfce/sistema')
@@ -28,6 +18,9 @@ export function Add() {
           console.log(res.data);
           alert('Nota Adicionada com Sucesso!');
           Navigate('/');
+        })
+        .catch((err) => {
+          alert('Erro interno!');
         });
     } else {
       alert('Efetue a leitura do código da nota fiscal.');
@@ -50,7 +43,9 @@ export function Add() {
         />
         <span></span>
         <p>{data}</p>
-        <button onClick={() => submit()}>Adicionar</button>
+        <button className="buttonAdd" onClick={() => submit()}>
+          Adicionar
+        </button>
       </div>
     </section>
   );

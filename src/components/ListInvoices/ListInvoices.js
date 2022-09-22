@@ -24,7 +24,7 @@ export function ListInvoices() {
             <tr>
               <th>#</th>
               <th>Empresa</th>
-              <th>Data</th>
+              <th>Data da compra</th>
             </tr>
           </thead>
           <tbody>
@@ -32,7 +32,7 @@ export function ListInvoices() {
               <tr key={key}>
                 <td>{item.id}</td>
                 <td>{item.company}</td>
-                <td>{item.date}</td>
+                <td>{new Date(item.date).toLocaleDateString('pt-br')}</td>
               </tr>
             ))}
           </tbody>

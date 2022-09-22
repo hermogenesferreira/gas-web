@@ -31,7 +31,12 @@ export function List() {
               <tr key={key}>
                 <td>{item.id}</td>
                 <td>{item.name}</td>
-                <td>{item.price}</td>
+                <td>
+                  {item.price.toLocaleString('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL',
+                  })}
+                </td>
               </tr>
             ))}
           </tbody>
